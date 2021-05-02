@@ -1,0 +1,33 @@
+.top {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 66px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    @media screen and (max-width: 450px) {
+        width: calc(100% - 60px);
+        padding: 0 30px;
+    }
+    .left {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .user {
+            width: 36px;
+            height: 36px;
+            background-color: #478da5;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

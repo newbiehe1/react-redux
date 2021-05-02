@@ -1,0 +1,29 @@
+.doSomething {
+    position: relative;
+    .hover {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: column nowrap;
+        width: 22px;
+        height: 19px;
+        margin-left: 20px;
+        i {
+            width: 22px;
+            height: 4px;
+            background-color: #fd6b0b;
+            display: block;
+        }
+    }
+    ul {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border-radius: 4px;
+        li {
+            padding: 5px 10px;
+        }
+    }
+}
