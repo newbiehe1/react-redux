@@ -108,3 +108,8 @@
     margin-left: 15px;
     cursor: pointer;
 }
+@media screen and (max-width: 475px) {
+    .sidebar {
+        display: none;
+    }
+}

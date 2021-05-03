@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import "../../assets/css/commit.css";
 import help from "../../assets/img/help.png";
 import add from "../../assets/img/add.png";
+import PcTemp from "../../sub-components/search-box/pc.jsx";
 
 function Context(props) {
     const tableTitle = Array.isArray(props.tableField)
@@ -18,10 +19,12 @@ function Context(props) {
               );
           })
         : [];
+
     let name = "";
     let tableList = [];
     if (props && props.tableData && props.tableData.name) {
         name = props.tableData.name;
+
         tableList = props.tableData.child.map((index, n) => {
             const html = props.tableField.map((item) => {
                 let itemHtml = (
@@ -49,19 +52,19 @@ function Context(props) {
 
     return (
         <div className={styles.container}>
-            <input type="text" defaultValue={name} className={styles.input} />
+            <PcTemp name={name} />
 
             <div className={styles.status}>
-                <div className={styles.title}>Status</div>
-                <div className={styles.data}>
-                    <div className={styles.left}>
+                <div className={styles.left}>
+                    <div className={styles.title}>Status</div>
+                    <div className={styles.data}>
                         Private
                         <img src={help} alt="" />
                     </div>
-                    <div className={styles.right}>
-                        <img src={logo} alt="" />
-                        <div className={styles.name}>Change Logo</div>
-                    </div>
+                </div>
+                <div className={styles.right}>
+                    <img src={logo} alt="" />
+                    <div className={styles.name}>Change Logo</div>
                 </div>
             </div>
 

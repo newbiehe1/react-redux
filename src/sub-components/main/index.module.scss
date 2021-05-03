@@ -1,32 +1,21 @@
 .container {
     flex: 1 1 calc(100% - 222px);
-    .input {
-        width: calc(100% - 68px);
-        margin: 30px auto 40px auto;
-        display: block;
-        padding: 14px;
-        color: #333;
-        border: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        outline: none;
-    }
+
     .status {
-        width: calc(100% - 40px);
-        margin: 0 auto;
-        .title {
-            font-weight: bold;
-            font-size: 1.2em;
-            width: calc(100% - 20px);
-            padding: 0 10px;
-        }
-        .data {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-flow: row nowrap;
-            width: calc(100% - 20px);
-            padding: 0 10px;
-            .left {
+        width: calc(100% - 60px);
+        margin: 0 auto 30px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        padding: 0 10px;
+        .left {
+            .title {
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+            .data {
+                margin-top: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
@@ -36,17 +25,17 @@
                     cursor: pointer;
                 }
             }
-            .right {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-flow: column nowrap;
-                img {
-                    display: block;
-                }
-                .name {
-                    color: #8cb8c7;
-                }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            img {
+                display: block;
+            }
+            .name {
+                color: #8cb8c7;
             }
         }
     }
@@ -91,6 +80,25 @@
             img {
                 margin-right: 5px;
                 display: block;
+            }
+        }
+    }
+}
+@media screen and (max-width: 475px) {
+    .container {
+        width: 100%;
+        .status {
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .right {
+                order: 1;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .left {
+                order: 2;
             }
         }
     }

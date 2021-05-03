@@ -1,9 +1,9 @@
 import styles from "./index.module.scss";
-import icon from "../../assets/img/icon.png";
 import add from "../../assets/img/add.png";
 import search from "../../assets/img/search.png";
 import select from "../../assets/img/select.png";
 import { useState, useEffect } from "react";
+import orgList from "../../assets/js/org-list";
 
 function Sidebar(props) {
     // 声明表格字段
@@ -81,40 +81,7 @@ function Sidebar(props) {
     });
 
     useEffect(() => {
-        const arr = [
-            {
-                name: "Ekas Pty Ltd",
-                img: icon,
-                show: false,
-                id: 1,
-                child: [
-                    {
-                        name: "Monica",
-                        email: "monica.li@ekas.com",
-                        permission: "owner",
-                    },
-                    {
-                        name: "Lawrence",
-                        email: "Lawrence.liu@ekas.com",
-                        permission: "can edit",
-                    },
-                ],
-            },
-            {
-                name: "item2",
-                img: icon,
-                show: false,
-                id: 2,
-                child: [
-                    {
-                        name: "name",
-                        email: "email",
-                        permission: "permission",
-                    },
-                ],
-            },
-        ];
-        setList(JSON.parse(JSON.stringify(arr)));
+        setList(JSON.parse(JSON.stringify(orgList)));
         // 声明表格字段
         initTableField();
     }, []);

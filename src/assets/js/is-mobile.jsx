@@ -1,7 +1,9 @@
 import { store } from "../../store/index";
 import { useState, useEffect } from "react";
+
 export default function MixinsTest(props) {
-    let OptionTemplate = null;
+    let OptionTemplate =
+        store.getState().value === "pc" ? props.pcTemp : props.mobileTemp;
     const [isComponent, setComponent] = useState("");
     useEffect(() => {
         setOptionTemplate();
@@ -21,5 +23,5 @@ export default function MixinsTest(props) {
     store.subscribe(() => {
         setOptionTemplate();
     });
-    return <OptionTemplate />;
+    return <OptionTemplate {...props} type={isComponent} />;
 }
